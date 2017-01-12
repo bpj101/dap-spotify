@@ -8,6 +8,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
 import { AboutComponent } from './components/about/about.component';
 
+/******************* Routing Block *************************/
+
+import { RouterModule, Routes } from '@angular/router';
+export const appRoutes: Routes = [
+  { path: '', component: SearchComponent },
+  { path: 'about', component: AboutComponent },
+];
+/******************* End Routing Block *********************/
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +27,8 @@ import { AboutComponent } from './components/about/about.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
