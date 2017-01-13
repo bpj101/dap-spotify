@@ -22,11 +22,9 @@ export class AlbumComponent implements OnInit {
     this._route.params
       .map(params => params['id'])
       .subscribe((id) => {
-        console.log(id);
         this._spotifyService.getAlbum(id)
           .subscribe((album) => {
               this.album = album;
-              console.log(this.album);
           });
       });
   }
